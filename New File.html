@@ -1,0 +1,2516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <meta
+        name="description"
+        content="MY-OKBI - Work, earn, manage and grow from one modern digital platform."
+    >
+
+    <meta name="theme-color" content="#c89b3c">
+
+    <title>MY-OKBI — Work, Earn & Grow</title>
+
+    <style>
+        /* =========================================================
+           MY-OKBI PUBLIC WEBSITE
+           Single-file responsive landing page
+           ========================================================= */
+
+        :root {
+            --gold: #c89b3c;
+            --gold-light: #f4d477;
+            --gold-dark: #8f681f;
+
+            --brown: #6d4b24;
+            --brown-light: #a98551;
+
+            --cream: #fffaf0;
+            --cream-dark: #f5ead5;
+
+            --white: #ffffff;
+            --text: #2b2116;
+            --muted: #766b5e;
+
+            --success: #16865b;
+            --border: rgba(109, 75, 36, 0.12);
+
+            --shadow-sm:
+                0 8px 25px rgba(74, 50, 20, 0.08);
+
+            --shadow-lg:
+                0 25px 70px rgba(74, 50, 20, 0.15);
+
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 30px;
+
+            --max-width: 1240px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family:
+                Inter,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            color: var(--text);
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(244, 212, 119, 0.28),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 90% 15%,
+                    rgba(200, 155, 60, 0.15),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    180deg,
+                    #fffdf8 0%,
+                    var(--cream) 45%,
+                    #ffffff 100%
+                );
+
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(
+                calc(100% - 32px),
+                var(--max-width)
+            );
+
+            margin-inline: auto;
+        }
+
+        /* =========================================================
+           HEADER
+           ========================================================= */
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            border-bottom: 1px solid rgba(109, 75, 36, 0.08);
+
+            background:
+                rgba(255, 255, 255, 0.88);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .header-inner {
+            min-height: 76px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+
+            font-weight: 900;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-logo {
+            width: 44px;
+            height: 44px;
+
+            border-radius: 13px;
+
+            display: grid;
+            place-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--gold-light),
+                    var(--gold),
+                    var(--gold-dark)
+                );
+
+            color: white;
+
+            box-shadow:
+                0 10px 25px rgba(200, 155, 60, 0.25);
+        }
+
+        .brand-logo span {
+            font-size: 21px;
+            font-weight: 950;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.05;
+        }
+
+        .brand-name {
+            font-size: 19px;
+            letter-spacing: 0.3px;
+        }
+
+        .brand-subtitle {
+            margin-top: 3px;
+
+            color: var(--brown-light);
+
+            font-size: 10px;
+            font-weight: 700;
+
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .desktop-nav a {
+            color: #5d5041;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition:
+                color 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .desktop-nav a:hover {
+            color: var(--gold-dark);
+            transform: translateY(-1px);
+        }
+
+        .header-download {
+            min-height: 44px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 0 18px;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--gold-light),
+                    var(--gold)
+                );
+
+            color: #fff;
+
+            font-size: 13px;
+            font-weight: 900;
+
+            box-shadow:
+                0 9px 24px rgba(200, 155, 60, 0.22);
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .header-download:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 14px 30px rgba(200, 155, 60, 0.3);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+
+            width: 44px;
+            height: 44px;
+
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            background: white;
+
+            cursor: pointer;
+
+            color: var(--brown);
+
+            font-size: 21px;
+        }
+
+        /* =========================================================
+           MOBILE NAV
+           ========================================================= */
+
+        .mobile-nav {
+            display: none;
+
+            padding: 12px 16px 18px;
+
+            border-top: 1px solid var(--border);
+
+            background: white;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav a {
+            display: block;
+
+            padding: 12px 5px;
+
+            color: var(--brown);
+
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .mobile-nav-download {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+
+            margin-top: 8px;
+
+            border-radius: 12px;
+
+            background: var(--gold);
+            color: white !important;
+        }
+
+        /* =========================================================
+           HERO
+           ========================================================= */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+
+            padding:
+                90px 0
+                80px;
+        }
+
+        .hero-grid {
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.1fr)
+                minmax(350px, 0.9fr);
+
+            align-items: center;
+
+            gap: 70px;
+        }
+
+        .hero-badge {
+            width: fit-content;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 13px;
+
+            border: 1px solid rgba(200, 155, 60, 0.22);
+            border-radius: 999px;
+
+            background:
+                rgba(255, 255, 255, 0.82);
+
+            color: var(--gold-dark);
+
+            font-size: 12px;
+            font-weight: 900;
+
+            box-shadow: var(--shadow-sm);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #18a56c;
+
+            box-shadow:
+                0 0 0 5px rgba(24, 165, 108, 0.1);
+        }
+
+        .hero h1 {
+            max-width: 760px;
+
+            margin-top: 22px;
+
+            font-size:
+                clamp(
+                    42px,
+                    6vw,
+                    76px
+                );
+
+            line-height: 0.98;
+
+            letter-spacing: -3.5px;
+
+            font-weight: 950;
+        }
+
+        .hero h1 span {
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--gold-dark),
+                    var(--gold),
+                    #e1bd61
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .hero-description {
+            max-width: 660px;
+
+            margin-top: 25px;
+
+            color: var(--muted);
+
+            font-size:
+                clamp(
+                    16px,
+                    2vw,
+                    19px
+                );
+
+            line-height: 1.75;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 13px;
+
+            margin-top: 32px;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            min-height: 52px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            padding:
+                0 22px;
+
+            border-radius: 14px;
+
+            font-size: 14px;
+            font-weight: 900;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .primary-btn {
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--gold-light),
+                    var(--gold),
+                    var(--gold-dark)
+                );
+
+            color: white;
+
+            box-shadow:
+                0 15px 30px rgba(200, 155, 60, 0.28);
+        }
+
+        .secondary-btn {
+            border: 1px solid var(--border);
+
+            background: white;
+
+            color: var(--brown);
+
+            box-shadow: var(--shadow-sm);
+        }
+
+        .primary-btn:hover,
+        .secondary-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .hero-note {
+            margin-top: 15px;
+
+            color: #8a7d6c;
+
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* =========================================================
+           APP PREVIEW
+           ========================================================= */
+
+        .hero-visual {
+            position: relative;
+
+            min-height: 530px;
+
+            display: grid;
+            place-items: center;
+        }
+
+        .glow {
+            position: absolute;
+
+            width: 360px;
+            height: 360px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(244, 212, 119, 0.5),
+                    transparent 68%
+                );
+
+            filter: blur(5px);
+        }
+
+        .phone {
+            position: relative;
+            z-index: 2;
+
+            width: min(
+                310px,
+                80%
+            );
+
+            padding: 10px;
+
+            border-radius: 40px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #30281f,
+                    #11100d
+                );
+
+            box-shadow:
+                0 40px 90px rgba(47, 34, 16, 0.3);
+        }
+
+        .phone-screen {
+            min-height: 570px;
+
+            overflow: hidden;
+
+            border-radius: 32px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #fffdf8,
+                    #f7ead0
+                );
+        }
+
+        .phone-top {
+            height: 32px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .notch {
+            width: 100px;
+            height: 23px;
+
+            border-radius: 0 0 16px 16px;
+
+            background: #15130f;
+        }
+
+        .phone-content {
+            padding: 20px;
+        }
+
+        .mini-brand {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 20px;
+        }
+
+        .mini-logo {
+            width: 40px;
+            height: 40px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--gold-light),
+                    var(--gold-dark)
+                );
+
+            color: white;
+            font-weight: 950;
+        }
+
+        .mini-balance {
+            padding: 22px;
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--gold-dark),
+                    var(--gold)
+                );
+
+            color: white;
+
+            box-shadow:
+                0 18px 35px rgba(200, 155, 60, 0.25);
+        }
+
+        .mini-balance small {
+            opacity: 0.82;
+            font-size: 10px;
+        }
+
+        .mini-balance strong {
+            display: block;
+
+            margin-top: 4px;
+
+            font-size: 31px;
+        }
+
+        .mini-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 10px;
+
+            margin-top: 14px;
+        }
+
+        .mini-card {
+            min-height: 82px;
+
+            padding: 14px;
+
+            border-radius: 16px;
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            box-shadow: 0 7px 20px rgba(74, 50, 20, 0.05);
+        }
+
+        .mini-card b {
+            display: block;
+
+            margin-bottom: 4px;
+
+            color: var(--gold-dark);
+
+            font-size: 18px;
+        }
+
+        .mini-card span {
+            color: var(--muted);
+
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .floating-card {
+            position: absolute;
+            z-index: 4;
+
+            padding: 14px 17px;
+
+            border:
+                1px solid rgba(255, 255, 255, 0.8);
+
+            border-radius: 16px;
+
+            background:
+                rgba(255, 255, 255, 0.9);
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 20px 45px rgba(74, 50, 20, 0.13);
+        }
+
+        .floating-card.one {
+            top: 15%;
+            left: 0;
+        }
+
+        .floating-card.two {
+            right: 0;
+            bottom: 16%;
+        }
+
+        .floating-title {
+            color: var(--muted);
+
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .floating-value {
+            margin-top: 2px;
+
+            color: var(--brown);
+
+            font-size: 17px;
+            font-weight: 950;
+        }
+
+        /* =========================================================
+           TRUST / STATS
+           ========================================================= */
+
+        .stats {
+            padding-bottom: 80px;
+        }
+
+        .stats-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 14px;
+        }
+
+        .stat {
+            padding: 25px;
+
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+
+            background:
+                rgba(255, 255, 255, 0.82);
+
+            box-shadow: var(--shadow-sm);
+
+            text-align: center;
+        }
+
+        .stat strong {
+            display: block;
+
+            color: var(--gold-dark);
+
+            font-size: 30px;
+            line-height: 1.1;
+        }
+
+        .stat span {
+            display: block;
+
+            margin-top: 5px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* =========================================================
+           SECTION
+           ========================================================= */
+
+        .section {
+            padding:
+                90px 0;
+        }
+
+        .section-heading {
+            max-width: 700px;
+
+            margin-bottom: 40px;
+        }
+
+        .section-label {
+            color: var(--gold-dark);
+
+            font-size: 11px;
+            font-weight: 950;
+
+            letter-spacing: 1.8px;
+
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            margin-top: 8px;
+
+            font-size:
+                clamp(
+                    30px,
+                    4vw,
+                    48px
+                );
+
+            line-height: 1.08;
+
+            letter-spacing: -1.5px;
+        }
+
+        .section-heading p {
+            margin-top: 13px;
+
+            color: var(--muted);
+
+            font-size: 15px;
+        }
+
+        /* =========================================================
+           FEATURES
+           ========================================================= */
+
+        .features {
+            background:
+                rgba(255, 250, 240, 0.7);
+        }
+
+        .feature-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .feature-card {
+            position: relative;
+
+            padding: 28px;
+
+            min-height: 215px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: var(--radius-md);
+
+            background: white;
+
+            box-shadow: var(--shadow-sm);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff4cf,
+                    #f5df9e
+                );
+
+            font-size: 23px;
+        }
+
+        .feature-card h3 {
+            margin-top: 19px;
+
+            font-size: 18px;
+        }
+
+        .feature-card p {
+            margin-top: 8px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* =========================================================
+           MEDIA SHOWCASE
+           ========================================================= */
+
+        .showcase-grid {
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.2fr)
+                minmax(280px, 0.8fr);
+
+            gap: 25px;
+
+            align-items: stretch;
+        }
+
+        .media-card {
+            overflow: hidden;
+
+            border-radius: var(--radius-lg);
+
+            background: #1c1812;
+
+            box-shadow: var(--shadow-lg);
+        }
+
+        .media-box {
+            position: relative;
+
+            width: 100%;
+
+            aspect-ratio: 16 / 9;
+
+            overflow: hidden;
+        }
+
+        .media-box img,
+        .media-box video,
+        .media-box iframe {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            border: 0;
+
+            object-fit: cover;
+        }
+
+        .media-placeholder {
+            width: 100%;
+            height: 100%;
+
+            display: grid;
+            place-items: center;
+
+            padding: 30px;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+                radial-gradient(
+                    circle at 30% 20%,
+                    rgba(244, 212, 119, 0.35),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #8f681f,
+                    #3e2c17
+                );
+        }
+
+        .media-placeholder strong {
+            display: block;
+
+            font-size: 28px;
+        }
+
+        .media-placeholder span {
+            display: block;
+
+            margin-top: 7px;
+
+            opacity: 0.8;
+
+            font-size: 12px;
+        }
+
+        .media-info {
+            padding: 20px 23px;
+
+            color: white;
+        }
+
+        .media-info h3 {
+            font-size: 18px;
+        }
+
+        .media-info p {
+            margin-top: 5px;
+
+            color: rgba(255, 255, 255, 0.65);
+
+            font-size: 12px;
+        }
+
+        .showcase-side {
+            display: grid;
+
+            gap: 16px;
+        }
+
+        .info-card {
+            padding: 24px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: var(--radius-md);
+
+            background: white;
+
+            box-shadow: var(--shadow-sm);
+        }
+
+        .info-card strong {
+            display: block;
+
+            color: var(--gold-dark);
+
+            font-size: 24px;
+        }
+
+        .info-card h3 {
+            margin-top: 5px;
+
+            font-size: 17px;
+        }
+
+        .info-card p {
+            margin-top: 6px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        /* =========================================================
+           HOW IT WORKS
+           ========================================================= */
+
+        .steps {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .step {
+            position: relative;
+
+            padding: 28px;
+
+            border-radius: var(--radius-md);
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            box-shadow: var(--shadow-sm);
+        }
+
+        .step-number {
+            width: 42px;
+            height: 42px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            background:
+                var(--gold);
+
+            color: white;
+
+            font-weight: 950;
+        }
+
+        .step h3 {
+            margin-top: 18px;
+
+            font-size: 18px;
+        }
+
+        .step p {
+            margin-top: 8px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+        /* =========================================================
+           DOWNLOAD CTA
+           ========================================================= */
+
+        .download-section {
+            padding:
+                30px 0
+                100px;
+        }
+
+        .download-box {
+            position: relative;
+            overflow: hidden;
+
+            padding:
+                55px;
+
+            border-radius:
+                var(--radius-lg);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #3d2b16,
+                    #6d4b24 50%,
+                    #9a712c
+                );
+
+            color: white;
+
+            box-shadow:
+                0 30px 80px rgba(67, 45, 17, 0.23);
+        }
+
+        .download-box::before {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            top: -130px;
+            right: -80px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(244, 212, 119, 0.18);
+        }
+
+        .download-content {
+            position: relative;
+            z-index: 2;
+
+            max-width: 760px;
+        }
+
+        .download-content .section-label {
+            color: var(--gold-light);
+        }
+
+        .download-content h2 {
+            margin-top: 8px;
+
+            font-size:
+                clamp(
+                    30px,
+                    4vw,
+                    50px
+                );
+
+            line-height: 1.05;
+
+            letter-spacing: -1.5px;
+        }
+
+        .download-content p {
+            max-width: 650px;
+
+            margin-top: 14px;
+
+            color: rgba(255,255,255,0.74);
+
+            font-size: 14px;
+        }
+
+        .download-action {
+            margin-top: 25px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 56px;
+
+            padding: 0 25px;
+
+            border-radius: 15px;
+
+            background: white;
+
+            color: var(--brown);
+
+            font-weight: 950;
+
+            box-shadow:
+                0 14px 30px rgba(0,0,0,0.18);
+
+            transition:
+                transform 0.2s ease;
+        }
+
+        .download-action:hover {
+            transform: translateY(-3px);
+        }
+
+        .download-small {
+            margin-top: 10px;
+
+            color: rgba(255,255,255,0.55);
+
+            font-size: 10px;
+        }
+
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+
+        footer {
+            border-top: 1px solid var(--border);
+
+            background:
+                #fffdf8;
+        }
+
+        .footer-inner {
+            padding:
+                45px 0
+                30px;
+
+            display: grid;
+
+            grid-template-columns:
+                1.5fr
+                1fr
+                1fr;
+
+            gap: 35px;
+        }
+
+        .footer-brand p {
+            max-width: 360px;
+
+            margin-top: 12px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 13px;
+
+            font-size: 13px;
+        }
+
+        .footer-col a {
+            display: block;
+
+            margin-top: 8px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+        .footer-bottom {
+            padding:
+                17px 0;
+
+            border-top:
+                1px solid var(--border);
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            text-align: center;
+        }
+
+        /* =========================================================
+           RESPONSIVE
+           ========================================================= */
+
+        @media (max-width: 1050px) {
+            .desktop-nav {
+                gap: 17px;
+            }
+
+            .hero-grid {
+                gap: 35px;
+            }
+
+            .hero h1 {
+                letter-spacing: -2.5px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .desktop-nav {
+                display: none;
+            }
+
+            .header-download {
+                margin-left: auto;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding-top: 65px;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-copy {
+                text-align: center;
+            }
+
+            .hero-badge {
+                margin-inline: auto;
+            }
+
+            .hero-description {
+                margin-inline: auto;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-note {
+                text-align: center;
+            }
+
+            .hero-visual {
+                min-height: 620px;
+            }
+
+            .stats-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .feature-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .showcase-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+            .footer-inner {
+                grid-template-columns:
+                    1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width:
+                    min(
+                        calc(100% - 22px),
+                        1240px
+                    );
+            }
+
+            .site-header {
+                position: sticky;
+            }
+
+            .header-inner {
+                min-height: 68px;
+                gap: 8px;
+            }
+
+            .brand-logo {
+                width: 39px;
+                height: 39px;
+            }
+
+            .brand-name {
+                font-size: 16px;
+            }
+
+            .brand-subtitle {
+                font-size: 8px;
+            }
+
+            .header-download {
+                min-height: 40px;
+
+                padding:
+                    0 12px;
+
+                font-size: 11px;
+            }
+
+            .mobile-menu-btn {
+                width: 40px;
+                height: 40px;
+            }
+
+            .hero {
+                padding:
+                    55px 0
+                    45px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .primary-btn,
+            .secondary-btn {
+                width: 100%;
+            }
+
+            .hero-visual {
+                min-height: 550px;
+            }
+
+            .phone {
+                width: 265px;
+            }
+
+            .phone-screen {
+                min-height: 500px;
+            }
+
+            .floating-card {
+                padding: 11px 13px;
+            }
+
+            .floating-card.one {
+                left: 3px;
+            }
+
+            .floating-card.two {
+                right: 3px;
+            }
+
+            .stats {
+                padding-bottom: 45px;
+            }
+
+            .stats-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 10px;
+            }
+
+            .stat {
+                padding: 19px 10px;
+            }
+
+            .stat strong {
+                font-size: 24px;
+            }
+
+            .stat span {
+                font-size: 10px;
+            }
+
+            .section {
+                padding:
+                    65px 0;
+            }
+
+            .section-heading {
+                margin-bottom: 28px;
+            }
+
+            .section-heading h2 {
+                font-size: 31px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+
+                gap: 12px;
+            }
+
+            .feature-card {
+                min-height: auto;
+                padding: 22px;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+
+                gap: 12px;
+            }
+
+            .media-info {
+                padding: 17px;
+            }
+
+            .download-section {
+                padding:
+                    10px 0
+                    65px;
+            }
+
+            .download-box {
+                padding:
+                    35px 23px;
+            }
+
+            .download-content h2 {
+                font-size: 32px;
+            }
+
+            .download-action {
+                width: 100%;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+
+                gap: 25px;
+
+                padding:
+                    35px 0
+                    25px;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .hero {
+                padding-top: 115px;
+            }
+
+            .hero-grid {
+                gap: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================================
+         HEADER
+         ========================================================= -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <a
+                href="#home"
+                class="brand"
+                aria-label="MY-OKBI Home"
+            >
+                <div class="brand-logo">
+                    <span>M</span>
+                </div>
+
+                <div class="brand-text">
+                    <span class="brand-name">
+                        MY-OKBI
+                    </span>
+
+                    <span class="brand-subtitle">
+                        Digital Work Platform
+                    </span>
+                </div>
+            </a>
+
+            <nav class="desktop-nav">
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#download">Download</a>
+            </nav>
+
+            <!-- Top Download Button -->
+
+            <a
+                class="header-download"
+                href="https://drive.google.com/uc?export=download&id=1PasY9IvIdcYWbQ3vAzAjgVKykqNHLa8Q"
+                download="MY-OKBI.apk"
+                target="download-frame"
+                onclick="startAppDownload(event)"
+            >
+                ↓ Download App
+            </a>
+
+            <button
+                class="mobile-menu-btn"
+                type="button"
+                aria-label="Open menu"
+                onclick="toggleMobileMenu()"
+            >
+                ☰
+            </button>
+
+        </div>
+
+        <nav
+            id="mobileNav"
+            class="mobile-nav"
+        >
+            <a href="#home" onclick="closeMobileMenu()">
+                Home
+            </a>
+
+            <a href="#features" onclick="closeMobileMenu()">
+                Features
+            </a>
+
+            <a href="#how-it-works" onclick="closeMobileMenu()">
+                How It Works
+            </a>
+
+            <a href="#download" onclick="closeMobileMenu()">
+                Download
+            </a>
+
+            <a
+                class="mobile-nav-download"
+                href="https://drive.google.com/uc?export=download&id=1PasY9IvIdcYWbQ3vAzAjgVKykqNHLa8Q"
+                download="MY-OKBI.apk"
+                target="download-frame"
+                onclick="startAppDownload(event)"
+            >
+                ↓ Download MY-OKBI App
+            </a>
+        </nav>
+
+    </header>
+
+
+    <!-- Hidden download frame.
+         The page remains visible while the download request is made. -->
+
+    <iframe
+        name="download-frame"
+        id="downloadFrame"
+        style="display:none;"
+        title="Download"
+    ></iframe>
+
+
+    <main>
+
+        <!-- =====================================================
+             HERO
+             ===================================================== -->
+
+        <section
+            id="home"
+            class="hero"
+        >
+
+            <div class="container hero-grid">
+
+                <div class="hero-copy">
+
+                    <div class="hero-badge">
+                        <span class="status-dot"></span>
+                        MY-OKBI Platform is Online
+                    </div>
+
+                    <h1>
+                        Work.
+                        <span>Earn.</span>
+                        Grow.
+                    </h1>
+
+                    <p class="hero-description">
+                        MY-OKBI brings digital work, rewards,
+                        referrals, premium services and account
+                        management together in one modern platform.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a
+                            class="primary-btn"
+                            href="https://drive.google.com/uc?export=download&id=1PasY9IvIdcYWbQ3vAzAjgVKykqNHLa8Q"
+                            download="MY-OKBI.apk"
+                            target="download-frame"
+                            onclick="startAppDownload(event)"
+                        >
+                            ↓ Download Android App
+                        </a>
+
+                        <a
+                            class="secondary-btn"
+                            href="#features"
+                        >
+                            Explore Platform →
+                        </a>
+
+                    </div>
+
+                    <p class="hero-note">
+                        Android APK • Direct download • No registration required
+                    </p>
+
+                </div>
+
+
+                <!-- APP PREVIEW -->
+
+                <div class="hero-visual">
+
+                    <div class="glow"></div>
+
+                    <div class="floating-card one">
+                        <div class="floating-title">
+                            Active Tasks
+                        </div>
+
+                        <div class="floating-value">
+                            1,420+
+                        </div>
+                    </div>
+
+                    <div class="floating-card two">
+                        <div class="floating-title">
+                            Platform
+                        </div>
+
+                        <div class="floating-value">
+                            MY-OKBI
+                        </div>
+                    </div>
+
+                    <div class="phone">
+
+                        <div class="phone-screen">
+
+                            <div class="phone-top">
+                                <div class="notch"></div>
+                            </div>
+
+                            <div class="phone-content">
+
+                                <div class="mini-brand">
+
+                                    <div>
+                                        <strong>
+                                            MY-OKBI
+                                        </strong>
+
+                                        <small style="display:block;color:#8a7d6c;">
+                                            Dashboard
+                                        </small>
+                                    </div>
+
+                                    <div class="mini-logo">
+                                        M
+                                    </div>
+
+                                </div>
+
+
+                                <div class="mini-balance">
+
+                                    <small>
+                                        Available Balance
+                                    </small>
+
+                                    <strong>
+                                        ৳ 8,500
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="mini-grid">
+
+                                    <div class="mini-card">
+                                        <b>1,420</b>
+                                        <span>
+                                            Data Entry
+                                        </span>
+                                    </div>
+
+                                    <div class="mini-card">
+                                        <b>2,850</b>
+                                        <span>
+                                            Marketing
+                                        </span>
+                                    </div>
+
+                                    <div class="mini-card">
+                                        <b>120+</b>
+                                        <span>
+                                            My Jobs
+                                        </span>
+                                    </div>
+
+                                    <div class="mini-card">
+                                        <b>24/7</b>
+                                        <span>
+                                            Support
+                                        </span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             STATS
+             ===================================================== -->
+
+        <section class="stats">
+
+            <div class="container stats-grid">
+
+                <div class="stat">
+                    <strong>1,420+</strong>
+                    <span>Data Entry Activity</span>
+                </div>
+
+                <div class="stat">
+                    <strong>2,850+</strong>
+                    <span>Marketing Activity</span>
+                </div>
+
+                <div class="stat">
+                    <strong>6+</strong>
+                    <span>Platform Services</span>
+                </div>
+
+                <div class="stat">
+                    <strong>24/7</strong>
+                    <span>Digital Access</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FEATURES
+             ===================================================== -->
+
+        <section
+            id="features"
+            class="section features"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="section-label">
+                        Platform Features
+                    </div>
+
+                    <h2>
+                        Everything you need in one platform.
+                    </h2>
+
+                    <p>
+                        Access work opportunities, rewards and
+                        digital services from a single MY-OKBI
+                        experience.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-grid">
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            ⌨
+                        </div>
+
+                        <h3>
+                            Data Entry
+                        </h3>
+
+                        <p>
+                            Access available data entry tasks
+                            and manage your work from one place.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            📣
+                        </div>
+
+                        <h3>
+                            Marketing
+                        </h3>
+
+                        <p>
+                            Explore digital marketing activities
+                            and available platform opportunities.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            💼
+                        </div>
+
+                        <h3>
+                            My Job
+                        </h3>
+
+                        <p>
+                            Keep track of your assigned work,
+                            submissions and activity history.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            ⭐
+                        </div>
+
+                        <h3>
+                            Premium
+                        </h3>
+
+                        <p>
+                            Explore premium platform features
+                            and available membership services.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            💳
+                        </div>
+
+                        <h3>
+                            Withdraw
+                        </h3>
+
+                        <p>
+                            Manage eligible balances and
+                            withdrawal requests through the platform.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            👥
+                        </div>
+
+                        <h3>
+                            Referral
+                        </h3>
+
+                        <p>
+                            Invite users and monitor your referral
+                            activity from your account.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MEDIA / BANNER
+             ===================================================== -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="section-label">
+                        MY-OKBI Showcase
+                    </div>
+
+                    <h2>
+                        A clean digital experience built for everyone.
+                    </h2>
+
+                    <p>
+                        Use this section later for your official
+                        banners, promotional images or application
+                        demonstration video.
+                    </p>
+
+                </div>
+
+
+                <div class="showcase-grid">
+
+                    <div class="media-card">
+
+                        <div class="media-box">
+
+                            <!--
+                                Replace this placeholder with your
+                                own image or video later.
+
+                                Example image:
+                                <img src="banner.jpg" alt="MY-OKBI">
+
+                                Example video:
+                                <video controls>
+                                    <source src="video.mp4" type="video/mp4">
+                                </video>
+                            -->
+
+                            <div class="media-placeholder">
+
+                                <div>
+                                    <strong>
+                                        MY-OKBI
+                                    </strong>
+
+                                    <span>
+                                        Official platform showcase
+                                    </span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="media-info">
+
+                            <h3>
+                                Work & Rewards Platform
+                            </h3>
+
+                            <p>
+                                Replace this area with your official
+                                promotional media whenever ready.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="showcase-side">
+
+                        <div class="info-card">
+
+                            <strong>
+                                Fast
+                            </strong>
+
+                            <h3>
+                                Simple Access
+                            </h3>
+
+                            <p>
+                                Download the Android application
+                                directly from the public website.
+                            </p>
+
+                        </div>
+
+
+                        <div class="info-card">
+
+                            <strong>
+                                Mobile
+                            </strong>
+
+                            <h3>
+                                Responsive Design
+                            </h3>
+
+                            <p>
+                                The public website adapts to phones,
+                                tablets, laptops and desktop screens.
+                            </p>
+
+                        </div>
+
+
+                        <div class="info-card">
+
+                            <strong>
+                                Public
+                            </strong>
+
+                            <h3>
+                                Open Landing Page
+                            </h3>
+
+                            <p>
+                                Visitors can explore the platform
+                                before deciding to install the app.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             HOW IT WORKS
+             ===================================================== -->
+
+        <section
+            id="how-it-works"
+            class="section features"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="section-label">
+                        How It Works
+                    </div>
+
+                    <h2>
+                        Start using MY-OKBI in three steps.
+                    </h2>
+
+                </div>
+
+
+                <div class="steps">
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            1
+                        </div>
+
+                        <h3>
+                            Download the App
+                        </h3>
+
+                        <p>
+                            Click the download button and get the
+                            MY-OKBI Android application.
+                        </p>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            2
+                        </div>
+
+                        <h3>
+                            Create Your Account
+                        </h3>
+
+                        <p>
+                            Open the application and complete the
+                            registration process.
+                        </p>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            3
+                        </div>
+
+                        <h3>
+                            Explore & Work
+                        </h3>
+
+                        <p>
+                            Explore available services, work,
+                            rewards and account features.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             DOWNLOAD CTA
+             ===================================================== -->
+
+        <section
+            id="download"
+            class="download-section"
+        >
+
+            <div class="container">
+
+                <div class="download-box">
+
+                    <div class="download-content">
+
+                        <div class="section-label">
+                            Android Application
+                        </div>
+
+                        <h2>
+                            Get the MY-OKBI app today.
+                        </h2>
+
+                        <p>
+                            Download the Android APK directly from
+                            the MY-OKBI public website and start
+                            your platform journey.
+                        </p>
+
+
+                        <a
+                            class="download-action"
+                            href="https://drive.google.com/uc?export=download&id=1PasY9IvIdcYWbQ3vAzAjgVKykqNHLa8Q"
+                            download="MY-OKBI.apk"
+                            target="download-frame"
+                            onclick="startAppDownload(event)"
+                        >
+                            ↓ Download MY-OKBI APK
+                        </a>
+
+                        <div class="download-small">
+                            Android APK • Official download source
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer>
+
+        <div class="container footer-inner">
+
+            <div class="footer-brand">
+
+                <a
+                    href="#home"
+                    class="brand"
+                >
+
+                    <div class="brand-logo">
+                        <span>M</span>
+                    </div>
+
+                    <div class="brand-text">
+                        <span class="brand-name">
+                            MY-OKBI
+                        </span>
+
+                        <span class="brand-subtitle">
+                            Digital Work Platform
+                        </span>
+                    </div>
+
+                </a>
+
+                <p>
+                    A modern digital platform for work,
+                    rewards and financial services.
+                </p>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h4>
+                    Platform
+                </h4>
+
+                <a href="#features">
+                    Features
+                </a>
+
+                <a href="#how-it-works">
+                    How It Works
+                </a>
+
+                <a href="#download">
+                    Download App
+                </a>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h4>
+                    Contact
+                </h4>
+
+                <a href="mailto:myokbi@info.com">
+                    myokbi@info.com
+                </a>
+
+                <a href="tel:09853795">
+                    09853795
+                </a>
+
+                <a href="#home">
+                    Dhaka, Bangladesh
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            © 2026 MY-OKBI. All rights reserved.
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+         ========================================================= -->
+
+    <script>
+
+        function toggleMobileMenu() {
+            const nav = document.getElementById("mobileNav");
+
+            nav.classList.toggle("active");
+        }
+
+
+        function closeMobileMenu() {
+            const nav = document.getElementById("mobileNav");
+
+            nav.classList.remove("active");
+        }
+
+
+        /*
+         * Starts the Google Drive download inside the hidden iframe.
+         * The landing page itself remains visible.
+         */
+        function startAppDownload(event) {
+
+            /*
+             * Keep the browser from navigating the current page.
+             */
+            event.preventDefault();
+
+            const url =
+                "https://drive.google.com/uc?export=download&id=1PasY9IvIdcYWbQ3vAzAjgVKykqNHLa8Q";
+
+            const frame =
+                document.getElementById("downloadFrame");
+
+            /*
+             * Start the download request without replacing
+             * the current MY-OKBI page.
+             */
+            frame.src = url;
+
+            /*
+             * Close mobile navigation after clicking download.
+             */
+            closeMobileMenu();
+
+        }
+
+
+        /*
+         * Close mobile menu when clicking outside it.
+         */
+        document.addEventListener("click", function(event) {
+
+            const nav =
+                document.getElementById("mobileNav");
+
+            const button =
+                document.querySelector(".mobile-menu-btn");
+
+            if (
+                nav.classList.contains("active") &&
+                !nav.contains(event.target) &&
+                !button.contains(event.target)
+            ) {
+                nav.classList.remove("active");
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
